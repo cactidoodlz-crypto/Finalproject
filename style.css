@@ -1,0 +1,14 @@
+style.css
+body {
+    /*
+      The path assumes the CSS file is inside a 'css' folder
+      and the image is inside an 'images' folder, one level up (../)
+    */
+    background-image: url('../images/background-image.jpg'); /* */
+
+    /* Optional: Add properties for better display */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    background-size: cover; /* Ensures the image covers the entire background */
+    background-position: center; /* Centers the image on the page */
+    background-attachment: fixed; /* Keeps the background fixed when scrolling */
+}
