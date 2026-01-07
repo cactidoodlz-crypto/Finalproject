@@ -91,27 +91,28 @@
     
  <body>
  
-  <!-- HTML Audio Tag -->
+<!-- 1. The Audio Element (Hidden) -->
 <audio id="myAudio" loop>
-  <source src="maintheme.mp3" type="audio/mpeg">
+    <source src="maintheme.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
 </audio>
 
 <script>
-  var audio = document.getElementById("myAudio");
-  var hasPlayed = false;
-
-  window.addEventListener('scroll', function() {
-    // Only play if not already playing and user has scrolled
-    if (!hasPlayed && window.pageYOffset > 100) {
-      audio.play().then(() => {
-        hasPlayed = true; // Prevents re-triggering on every scroll event
-      }).catch(error => {
-        console.log("Autoplay blocked, needs user interaction first.");
-      });
+    // 2. JavaScript to play on first click or scroll
+    const audio = document.getElementById("myAudio");
+    
+    function playAudio() {
+        audio.play().catch(error => console.log("Playback prevented:", error));
+        // Remove listeners so it only plays once
+        window.removeEventListener('click', playAudio);
+        window.removeEventListener('scroll', playAudio);
     }
-  });
-</script>
 
+    // Trigger on first click
+    window.addEventListener('click', playAudio);
+    // Trigger on first scroll
+    window.addEventListener('scroll', playAudio);
+</script>
 
 
  </body>
