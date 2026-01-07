@@ -87,22 +87,16 @@
   </body>
     
  <body>
-  <!DOCTYPE html>
-<html>
-<head>
-    <title>Background Music on Scroll</title>
-</head>
-<body>
-
+ 
     <!-- The audio element (hidden from view) -->
     <audio id="background-music" loop>
-        <source src="mainmenufix.mp3" type="audio/mpeg">
+        <source src="maintheme.mp3" type="audio/mpeg">
         <!-- Add alternative sources for better browser compatibility -->
-        <source src="mainmenufix.ogg" type="audio/ogg">
+        <source src="maintheme.ogg" type="audio/ogg">
         Your browser does not support the audio element.
     </audio>
 
-    <!-- Page content to enable scrolling -->
+    <!-- Page content to enable scrolling (hidden from view)-->
     <div style="height: 2000px; padding: 20px;">
         <h1>Scroll down to start the music!</h1>
         <p>This large block of content is here to enable scrolling.</p>
@@ -133,10 +127,7 @@
         window.addEventListener('scroll', startMusic);
         window.addEventListener('click', startMusic); // A click is also a valid interaction
 
-       // Get the audio element
-  var audio = document.getElementById("bgMusic");
-  // Set volume to 20% (0.0 to 1.0)
-  audio.volume = 0.2;
+     
     </script>
 
 
