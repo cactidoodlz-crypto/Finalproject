@@ -23,9 +23,8 @@
   <img src="leazel2.png" alt="leazel">
  
   
- <!-- The Word -->
-<span onclick="new Audio('Leazel.mp3').play()" style="cursor:pointer; color:blue;">Voice Line</span>
-
+  <span id="voice line" style="cursor:pointer; color:blue;">Voice Line </span>
+<audio id="audioPlayer" src="Leazel.mp3"></audio> 
 
   
   <br> Lae'zel is the first character that you meet in the ship, She is a Githyanki, and her class is a fighter. 
@@ -92,54 +91,30 @@
     
  <body>
  
-    <!-- The audio element (hidden from view) -->
-    <audio id="background-music" loop>
-        <source src="maintheme.mp3" type="audio/mpeg">
-        <!-- Add alternative sources for better browser compatibility -->
-        <source src="maintheme.ogg" type="audio/ogg">
-        Your browser does not support the audio element.
-    </audio>
+  <!-- HTML Audio Tag -->
+<audio id="myAudio" loop>
+  <source src="maintheme.mp3" type="audio/mpeg">
+</audio>
 
-    <!-- Page content to enable scrolling (hidden from view)-->
-    <div style="height: 2000px; padding: 20px;">
-        <h1>Scroll down to start the music!</h1>
-        <p>This large block of content is here to enable scrolling.</p>
-        <!-- Add more content here to ensure the user actually needs to scroll -->
-    </div>
+<script>
+  var audio = document.getElementById("myAudio");
+  var hasPlayed = false;
 
-    <script>
-        // Get the audio element
-        const audio = document.getElementById('background-music');
-        let musicStarted = false;
-
-        // Function to start the music
-        function startMusic() {
-            if (!musicStarted) {
-                audio.play().then(() => {
-                    musicStarted = true;
-                    // Optional: remove the event listener once music starts to prevent re-triggering
-                    window.removeEventListener('scroll', startMusic);
-                    window.removeEventListener('click', startMusic); // Also handle clicks as a potential first interaction
-                }).catch(error => {
-                    console.error("Audio playback failed:", error);
-                    // Inform user if autoplay was blocked
-                });
-            }
-        }
-
-        // Listen for user interaction events to enable playback
-        window.addEventListener('scroll', startMusic);
-        window.addEventListener('click', startMusic); // A click is also a valid interaction
-
-   
-
-
-    </script>
+  window.addEventListener('scroll', function() {
+    // Only play if not already playing and user has scrolled
+    if (!hasPlayed && window.pageYOffset > 100) {
+      audio.play().then(() => {
+        hasPlayed = true; // Prevents re-triggering on every scroll event
+      }).catch(error => {
+        console.log("Autoplay blocked, needs user interaction first.");
+      });
+    }
+  });
+</script>
 
 
 
-
-</body>
+ </body>
  
 
 
