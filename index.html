@@ -8,13 +8,13 @@
   
 <center> <img src="bg3post.png" width="400" height="300" class=center alt="poster"> </center>
   
-  what bg3 is
+  // what is bg3
  
 <body> 
  words
 </body>
   
-  characters and there greeting 
+  // characters and there greeting 
 <body> 
   <br> The game has six characters you will meet on the way that can become part of your team.
     You also have the option to leave them behind, though it's best to bring them on your adventure as they can be helpful.</br>
@@ -76,13 +76,13 @@
 </body>
 
 
-  Quote and related to class/learned
+  // Quote and related to class/learned
   <body>  
   </body>
 
    
 
-  favorite things
+  // favorite things
   <body>
   </body>
     
@@ -127,11 +127,19 @@
         window.addEventListener('scroll', startMusic);
         window.addEventListener('click', startMusic); // A click is also a valid interaction
 
-     <audio id="myBackgroundMusic" autoplay loop>
+    <!-- The audio element with autoplay, loop, and id -->
+<audio id="background-music" autoplay loop>
     <source src="maintheme.mp3" type="audio/mpeg">
+</audio>
 
-    // Set the volume to 10%
-    document.getElementById("myBackgroundMusic").volume = 0.1;
+<script>
+    // Access the audio element
+    var audio = document.getElementById("background-music");
+    // Set volume to 10% (value between 0.0 and 1.0)
+    audio.volume = 0.1;
+</script>
+
+
 
     </script>
 
