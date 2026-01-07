@@ -89,33 +89,29 @@
   <body>
   </body>
     
- <body>
+
+<body>
+
+    <!-- The audio element (hidden from the user) -->
+    <audio id="background-music" loop>
+        <source src="maintheme.mp3" type="audio/mpeg">
+        <!-- You can add other formats for compatibility -->
+        <source src="maintheme.ogg" type="audio/ogg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <!--
+        Add enough content to make the page scrollable for testing
+    -->
+    <div style="height: 200vh;">
+        <h1>Scroll down to start the music!</h1>
+    </div>
+
+    <script src="script.js"></script>
  
-<!-- 1. The Audio Element (Hidden) -->
-<audio id="myAudio" loop>
-    <source src="maintheme.mp3" type="audio/mpeg">
-    Your browser does not support the audio element.
-</audio>
 
-<script>
-    // 2. JavaScript to play on first click or scroll
-    const audio = document.getElementById("myAudio");
-    
-    function playAudio() {
-        audio.play().catch(error => console.log("Playback prevented:", error));
-        // Remove listeners so it only plays once
-        window.removeEventListener('click', playAudio);
-        window.removeEventListener('scroll', playAudio);
-    }
+</body>
 
-    // Trigger on first click
-    window.addEventListener('click', playAudio);
-    // Trigger on first scroll
-    window.addEventListener('scroll', playAudio);
-</script>
-
-
- </body>
  
 
 
