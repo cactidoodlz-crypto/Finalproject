@@ -20,11 +20,11 @@ function startMusic() {
     }
 
     // Remove the event listener after the first interaction
-    window.removeEventListener('scroll', startMusic);
+    window.removeEventListener('click', startMusic);
 }
 
 // Add an event listener to the window for the 'scroll' event
-window.addEventListener('scroll', startMusic);
+window.addEventListener('click', startMusic);
 
 // Alternatively, you can use other user interactions like 'click', 'keydown', etc.
 // window.addEventListener('click', startMusic);
