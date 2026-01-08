@@ -20,11 +20,26 @@ function startMusic() {
     }
 
     // Remove the event listener after the first interaction
-    window.removeEventListener('click', startMusic);
+    window.removeEventListener('scroll', startMusic);
 }
 
 // Add an event listener to the window for the 'scroll' event
-window.addEventListener('click', startMusic);
+window.addEventListener('scroll', startMusic);
 
 // Alternatively, you can use other user interactions like 'click', 'keydown', etc.
 // window.addEventListener('click', startMusic);
+
+function quietAudio() {
+    var audio = document.getElementById('background-audio');
+    if (audio) {
+        audio.volume = 0.1; // Sets volume to 10%
+    }
+}
+
+function restoreVolume() {
+    var audio = document.getElementById('background-audio');
+    if (audio) {
+        audio.volume = 1.0; // Restores to full volume
+    }
+}
+
