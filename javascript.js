@@ -30,14 +30,14 @@ window.addEventListener('scroll', startMusic);
 // window.addEventListener('click', startMusic);
 
 function quietAudio() {
-    var audio = document.getElementById('background-audio');
+    var audio = document.getElementById('background-music');
     if (audio) {
         audio.volume = 0.1; // Sets volume to 10%
     }
 }
 
 function restoreVolume() {
-    var audio = document.getElementById('background-audio');
+    var audio = document.getElementById('background-music');
     if (audio) {
         audio.volume = 1.0; // Restores to full volume
     }
